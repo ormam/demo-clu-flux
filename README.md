@@ -3,6 +3,11 @@ Flux CD repo for demo purposes
 
 # Install ArgoCD
 
+Login to the GCP cluster
+```
+gcloud container clusters get-credentials $(hostname) --zone $(gcloud compute instances list $(hostname) --format "value(zone)") --project devops-course-architecture
+```
+
 Install argoCD on kubernetes
 ```
 kubectl create namespace argocd
