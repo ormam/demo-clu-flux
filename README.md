@@ -30,6 +30,15 @@ Change the password using the command:
 argocd account update-password
 ```
 
+List all clusters contexts in your current kubeconfig and get the cluster name
+```
+kubectl config get-contexts -o name
+```
+Add the cluster as a deployment cluster
+```
+argocd cluster add <Cluster Name>
+```
+
 # Deploy the application on the kubenetes cluster
 install Nginx controller
 ```
