@@ -89,15 +89,23 @@ spec:
       - CreateNamespace=true
 ```
 
-Sync the application
+## Sync the application
 
 Check the rollout
 ```
 kubectl argo rollouts list rollouts
 ```
+Get the ingress's IP
+```
+k get ingress -A
+```
+## Browse to the website with the ingress's IP
 
-Check the rollout status
+## Change the image to 1.0.0 on the application's deployment
+
+Check the rollout status progressing until step 5
 ```
 kubectl argo rollouts get rollout realtimeapp -w
 ```
-change the image to 1.0.0 on the application's deployment
+
+## Resume the cannary rollout from the UI
