@@ -121,7 +121,7 @@ spec:
   -  http:
       paths:
         - path: /
-          host: real.baeke.info
+          #host: real.baeke.info
           pathType: Prefix
           backend:
             service:
