@@ -46,7 +46,7 @@ Add the cluster as a deployment cluster
 argocd cluster add <Cluster Name>
 ```
 
-#Install ArgoCD rollout
+# Install ArgoCD rollout
 
 Install the rollout operator
 ```
