@@ -7,7 +7,10 @@ Login to the GCP cluster
 ```
 gcloud container clusters get-credentials $(hostname) --zone $(gcloud compute instances list $(hostname) --format "value(zone)") --project devops-course-architecture
 ```
-
+install argoCD CLI
+```
+brew install argocd
+```
 Install argoCD on kubernetes
 ```
 kubectl create namespace argocd
