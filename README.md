@@ -97,11 +97,14 @@ kubectl argo rollouts list rollouts
 ```
 Get the ingress's IP
 ```
-k get ingress -A
+kubectl get ingress -A
 ```
+
 **Browse to the website with the ingress's IP**
 
+
 **Change the image to 1.0.0 on the application's deployment**
+
 
 Check the rollout status progressing until step 5
 ```
