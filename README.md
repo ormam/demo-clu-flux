@@ -30,7 +30,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 Login to argocd
 ```
-argocd login <External Loadbalancer IP>
+argocd login  <External Loadbalancer IP> --insecure --username admin --password <Inital Password> 
 ```
 Change the password using the command:
 ```
@@ -46,12 +46,29 @@ Add the cluster as a deployment cluster
 argocd cluster add <Cluster Name>
 ```
 
+#Install ArgoCD rollout
+
+Install the rollout operator
+```
+kubectl create namespace argo-rollouts
+kubectl apply -n argo-rollouts -f https://raw.githubusercontent.com/argoproj/argo-rollouts/stable/manifests/install.yaml
+```
+Install kubectl rollouts
+```
+brew install argoproj/tap/kubectl-argo-rollouts
+```
+
 # Deploy the application on the kubenetes cluster
+Enter from the browser to the ArgoCD  UI
+```
+http://<External Loadbalancer IP>
+```
 install Nginx controller
 ```
 kubectl create namespace ingress-nginx
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml -n ingress-nginx
 ```
+Deploy the application from this file in the UI
 ```
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -71,6 +88,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
 ```
+
+Sync the application
 
 Check the rollout
 ```
