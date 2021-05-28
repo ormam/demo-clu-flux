@@ -1,6 +1,12 @@
 # demo-clu-flux
 Flux CD repo for demo purposes
 
+Install ArgoCD
+```
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
 install Nginx controller
 ```
 kubectl create namespace ingress-nginx
