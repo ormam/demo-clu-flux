@@ -98,6 +98,6 @@ kubectl argo rollouts list rollouts
 
 Check the rollout status
 ```
-kubectl argo rollouts get rollout realtimeapp
+kubectl argo rollouts get rollout realtimeapp -w
 ```
 change the image to 1.0.0 on the application's deployment
