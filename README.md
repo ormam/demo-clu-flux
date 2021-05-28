@@ -20,3 +20,13 @@ spec:
     syncOptions:
       - CreateNamespace=true
 ```
+
+Check the rollout
+```
+kubectl argo rollouts list rollouts
+```
+
+Check the rollout status
+```
+kubectl argo rollouts get rollout realtimeapp
+```
